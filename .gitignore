@@ -1,0 +1,95 @@
+
+# =====================================
+# PYTHON ENVIRONMENT
+# =====================================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =====================================
+# ENVIRONMENT VARIABLES & SECRETS
+# =====================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# =====================================
+# AI MODELS & LARGE MODEL FILES
+# =====================================
+models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.h5
+*.keras
+*.tflite
+
+# =====================================
+# LOCAL DATABASES
+# =====================================
+*.db
+*.sqlite
+*.sqlite3
+
+# =====================================
+# PRIVATE / RAW DATA
+# =====================================
+data/raw/*
+!data/raw/.gitkeep
+
+uploads/
+private_data/
+patient_records/
+
+# =====================================
+# GENERATED RESULTS & LOGS
+# =====================================
+results/*
+!results/.gitkeep
+logs/
+*.log
+*.tmp
+
+# =====================================
+# FRONTEND DEPENDENCIES
+# =====================================
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# =====================================
+# EDITOR & OS FILES
+# =====================================
+.vscode/*
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# Generated AI evaluation results
+**/results/*
+!**/results/.gitkeep
+
+# Python test cache
+**/.pytest_cache/
+**/__pycache__/

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g1resq-ai"
+version = "0.1.0"
+description = "Offline-first emergency report assessment engine"
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2.7", "requests>=2.31"]
+
+[tool.setuptools.packages.find]
+include = ["g1resq_ai*"]

@@ -1,0 +1,2 @@
+-e ./ai_engine
+pytest>=8.0
