@@ -46,7 +46,7 @@ class LLMAssessment(BaseModel):
     injuries: Optional[str] = Field(default=None, max_length=200)
     location: Optional[str] = Field(default=None, max_length=200)
     missing_info: list[MissingInfo] = Field(default_factory=list)
-    summary: str = Field(max_length=400)
+    summary: str = Field(default="", max_length=400)
     evidence: list[str] = Field(default_factory=list, max_length=5)
 
     @field_validator("incident_type", "urgency", mode="before")
@@ -66,6 +66,15 @@ class LLMAssessment(BaseModel):
     @classmethod
     def _none_to_list(cls, v):
         return [] if v is None else v
+    
+def llm_output_schema() -> dict:
+    """JSON schema sent to the model: LLMAssessment minus fields computed in code."""
+    schema = LLMAssessment.model_json_schema()
+    schema["properties"].pop("missing_info", None)
+    schema["properties"].pop("summary", None)
+    if "evidence" in schema["properties"]:
+        schema["properties"]["evidence"]["maxItems"] = 2
+    return schema
 
 
 class IncidentAssessment(BaseModel):

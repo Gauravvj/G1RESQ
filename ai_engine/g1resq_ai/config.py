@@ -17,11 +17,12 @@ class Settings:
     ollama_url: str = "http://localhost:11434"
     model_name: str = "gemma3n:e2b"
     num_ctx: int = 2048            # context window; small = less RAM, faster
-    num_predict: int = 200         # hard cap on output tokens
+    num_predict: int = 256        # hard cap on output tokens
     temperature: float = 0.0       # deterministic output for triage
     request_timeout_sec: int = 300
     keep_alive: str = "10m"        # keep the model in RAM between requests
     max_report_chars: int = 2000   # longer reports are truncated
+    use_json_schema: bool = True
 
 
 def get_settings() -> Settings:
